@@ -26,7 +26,7 @@ class Navigation {
       case newdetail:
         return MaterialPageRoute(
             builder: (context) =>
-                NewDetail(item: settings.arguments as NewsDetail));
+                NewDScreen(item: settings.arguments as NewDScreen));
       case detail:
         return MaterialPageRoute(
             builder: (context) => DetailScreen(
