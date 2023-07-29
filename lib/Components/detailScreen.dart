@@ -138,7 +138,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         style: TextStyle(color: fontSty.mauchinh),
                       ),
                       Text(
-                        'Nguyễn Văn A',
+                        widget.item.name,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: fontSty.mauchinh),
@@ -149,7 +149,8 @@ class _DetailScreenState extends State<DetailScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: Container(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.only(
+                        left: 10, top: 10, bottom: 10, right: 5),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.black),
@@ -179,12 +180,15 @@ class _DetailScreenState extends State<DetailScreen> {
                   child: Container(
                     padding: EdgeInsets.all(10),
                     width: MediaQuery.of(context).size.width,
-                    height: 445,
+                    height: 425,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(10)),
-                    child: Text('Nội dung công việc'),
+                    child: Text(
+                      widget.item.content,
+                      style: TextStyle(fontSize: 14),
+                    ),
                   ),
                 ),
               ]),

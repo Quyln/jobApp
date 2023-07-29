@@ -29,24 +29,23 @@ class _TaskDesignState extends State<TaskDesign> {
     var response = await dio.get(
         'https://raw.githubusercontent.com/Quyln/jobApp/main/server/TaskList.json');
     if (response.statusCode == 200) {
-      if (response.data is String) {
-        print('string');
-      } else {
-        print('map');
-      }
+      // if (response.data is String) {
+      //   print('string');
+      // } else {
+      //   print('map');
+      // }
       List<dynamic> dataList = jsonDecode(response.data);
-      List<Task> newTask = [];
-      for (int i = 0; i < dataList.length; i++) {
-        dynamic data = dataList[i];
-        String title = data['title'];
-        bool completed = data['completed'];
-        Task task3 = Task(title: title, completed: completed);
-        newTask.add(task3);
-      }
-      // task2 = dataList.map((e) => Task.fromJson(e)).toList();
+      // for (int i = 0; i < dataList.length; i++) {
+      //   dynamic data = dataList[i];
+      //   String title = data['title'];
+      //   bool completed = data['completed'];
+      //   Task task3 = Task(title: title, completed: completed);
+      //   newTask.add(task3);
+      // }
+      task2 = dataList.map((e) => Task.fromJson(e)).toList();
       setState(() {
         loading = false;
-        task2 = newTask;
+        task2;
       });
     } else {
       ScaffoldMessenger.of(context)
