@@ -1,5 +1,4 @@
 import 'package:duanmoi/Components/tasks%20list/new_class.dart';
-import 'package:duanmoi/Components/tasks%20list/task.dart';
 import 'package:flutter/material.dart';
 
 class NewDetail extends StatelessWidget {
