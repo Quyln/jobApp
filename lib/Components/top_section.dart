@@ -1,4 +1,4 @@
-import 'package:duanmoi/image.dart';
+import 'package:duanmoi/images_link.dart';
 import 'package:flutter/material.dart';
 
 import 'navigation_screen.dart';

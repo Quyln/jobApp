@@ -1,5 +1,5 @@
 import 'package:duanmoi/Components/tasks%20list/task_class.dart';
-import 'package:duanmoi/image.dart';
+import 'package:duanmoi/images_link.dart';
 import 'package:flutter/material.dart';
 import '../navigation_screen.dart';
 
@@ -23,14 +23,14 @@ class _DetailScreenState extends State<DetailScreen> {
           Padding(
             padding: const EdgeInsets.all(20),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               height: 600,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(blurRadius: 2, blurStyle: BlurStyle.outer),
                 ],
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                     colors: [Colors.blue, Colors.white],
                     begin: Alignment.topLeft,
                     end: Alignment.bottomCenter),
@@ -56,7 +56,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     InkWell(
@@ -122,26 +122,26 @@ class _DetailScreenState extends State<DetailScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
                   child: Container(
-                    padding: EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10),
                     height: 40,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(children: [
-                      Icon(
+                      const Icon(
                         Icons.person,
-                        color: fontSty.mauchinh,
+                        color: FontSty.mauchinh,
                       ),
-                      Text(
+                      const Text(
                         'Người gửi: ',
-                        style: TextStyle(color: fontSty.mauchinh),
+                        style: TextStyle(color: FontSty.mauchinh),
                       ),
                       Text(
                         widget.item.name,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: fontSty.mauchinh),
+                            color: FontSty.mauchinh),
                       )
                     ]),
                   ),
@@ -149,27 +149,27 @@ class _DetailScreenState extends State<DetailScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         left: 10, top: 10, bottom: 10, right: 5),
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(children: [
-                      Icon(
+                      const Icon(
                         Icons.how_to_vote,
-                        color: fontSty.mauchinh,
+                        color: FontSty.mauchinh,
                       ),
-                      Text(
+                      const Text(
                         'Tiêu đề: ',
-                        style: TextStyle(color: fontSty.mauchinh),
+                        style: TextStyle(color: FontSty.mauchinh),
                       ),
                       Expanded(
                         child: Text(
                           widget.item.title,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: fontSty.mauchinh),
+                              color: FontSty.mauchinh),
                         ),
                       )
                     ]),
@@ -178,7 +178,7 @@ class _DetailScreenState extends State<DetailScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     width: MediaQuery.of(context).size.width,
                     height: 425,
                     decoration: BoxDecoration(
@@ -187,7 +187,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         borderRadius: BorderRadius.circular(10)),
                     child: Text(
                       widget.item.content,
-                      style: TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 14),
                     ),
                   ),
                 ),
@@ -205,18 +205,18 @@ class _DetailScreenState extends State<DetailScreen> {
                   },
                   child: Text(
                     'XÁC NHẬN',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  style: ButtonStyle(
+                  style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(Colors.green)),
                 ),
                 ElevatedButton(
                   onPressed: () {},
                   child: Text(
                     'TRẢ LỜI',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  style: ButtonStyle(
+                  style: const ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(Colors.blue)),
                 ),
                 // ElevatedButton(

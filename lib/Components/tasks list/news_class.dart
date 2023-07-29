@@ -14,6 +14,6 @@ class NewsDetail {
         image: data['image'],
         title: data['title'],
         content: data['content'],
-        link: 'link');
+        link: data['link']);
   }
 }

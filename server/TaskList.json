@@ -3,7 +3,7 @@
     "userId": 1,
     "name": "Nguyễn Thành Trung",
     "title": "Tuyển dụng dự án Quận 9",
-    "completed": false,
+    "completed": true,
     "content": "Dự án đang cần tuyển 50 người, giao gấp."
   },
   {
@@ -17,7 +17,7 @@
     "userId": 3,
     "name": "Nguyễn Thị Thanh",
     "title": "Cuộc họp quan trọng tháng 8",
-    "completed": false,
+    "completed": true,
     "content": "Tất cả chuẩn bị có mặt đúng thời gian"
   },
   {
@@ -31,14 +31,14 @@
     "userId": 5,
     "name": "Dương Văn Hoà",
     "title": "Cập nhật ngay danh sách",
-    "completed": false,
+    "completed": true,
     "content": "Sao vẫn chưa thấy em cập nhật danh sách vậy?"
   },
   {
     "userId": 6,
     "name": "Hồng Thất Công",
     "title": "Sắp hết thời gian bàn giao dự án HCM",
-    "completed": false,
+    "completed": true,
     "content": "Chưa giao đủ người là bị trừ lương đấy nhé."
   },
   {
@@ -66,7 +66,7 @@
     "userId": 10,
     "name": "Nguyễn Tấn Dũng",
     "title": "Chuẩn bị công tác khai trương chi nhánh",
-    "completed": false,
+    "completed": true,
     "content": "Mua sắm đầy đủ đồ dùng để chuẩn bị khai trương chi nhánh em nhé."
   }
   ]
