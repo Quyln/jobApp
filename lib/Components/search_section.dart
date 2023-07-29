@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'navigation.dart';
+import 'navigation_screen.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});

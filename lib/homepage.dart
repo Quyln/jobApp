@@ -1,6 +1,6 @@
 import 'package:duanmoi/Components/search_section.dart';
 import 'package:duanmoi/Components/task_section.dart';
-import 'package:duanmoi/Components/tasks%20list/news.dart';
+import 'package:duanmoi/Components/tasks%20list/news_design.dart';
 import 'package:duanmoi/Components/top_section.dart';
 import 'package:duanmoi/Components/utils/rive_utils.dart';
 import 'package:flutter/material.dart';

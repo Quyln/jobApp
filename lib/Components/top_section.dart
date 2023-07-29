@@ -1,7 +1,7 @@
 import 'package:duanmoi/image.dart';
 import 'package:flutter/material.dart';
 
-import 'navigation.dart';
+import 'navigation_screen.dart';
 
 class TopSection extends StatelessWidget {
   const TopSection({super.key});

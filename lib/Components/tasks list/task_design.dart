@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:duanmoi/Components/navigation.dart';
-import 'package:duanmoi/Components/tasks%20list/task.dart';
+import 'package:duanmoi/Components/navigation_screen.dart';
+import 'package:duanmoi/Components/tasks%20list/task_class.dart';
 import 'package:flutter/material.dart';
 // import 'package:http/http.dart' as http;
 
@@ -29,11 +29,6 @@ class _TaskDesignState extends State<TaskDesign> {
     var response = await dio.get(
         'https://raw.githubusercontent.com/Quyln/jobApp/main/server/TaskList.json');
     if (response.statusCode == 200) {
-      // if (response.data is String) {
-      //   print('string');
-      // } else {
-      //   print('map');
-      // }
       List<dynamic> dataList = jsonDecode(response.data);
       // for (int i = 0; i < dataList.length; i++) {
       //   dynamic data = dataList[i];

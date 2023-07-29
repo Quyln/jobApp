@@ -1,9 +1,9 @@
 import 'dart:convert';
-
-import 'package:duanmoi/Components/tasks%20list/new_class.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:duanmoi/Components/tasks%20list/news_class.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import '../navigation.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class News extends StatefulWidget {
   const News({super.key});
@@ -14,21 +14,25 @@ class News extends StatefulWidget {
 
 class _NewsState extends State<News> {
   List<dynamic> newsList = [];
+  bool loading = false;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getNewsList();
   }
 
   void getNewsList() async {
-    var url = Uri.parse('uri');
+    var url = Uri.parse(
+        'https://raw.githubusercontent.com/Quyln/jobApp/main/server/newPageview.json');
     var response = await http.get(url);
 
     if (response.statusCode == 200) {
       List<dynamic> dataList = jsonDecode(response.body);
       newsList = dataList.map((e) => NewsDetail.fromJson(e)).toList();
+      setState(() {
+        newsList;
+      });
     }
   }
 
@@ -44,8 +48,7 @@ class _NewsState extends State<News> {
                     left: 30, right: 30, top: 26, bottom: 5),
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context)
-                        .pushNamed(Navigation.newdetail, arguments: e);
+                    launchUrlString(e.link);
                   },
                   child: Container(
                       height: 200,

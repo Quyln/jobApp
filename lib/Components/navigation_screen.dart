@@ -1,7 +1,7 @@
-import 'package:duanmoi/Components/detailScreen.dart';
-import 'package:duanmoi/Components/tasks%20list/new_class.dart';
-import 'package:duanmoi/Components/tasks%20list/news_detail.dart';
-import 'package:duanmoi/Components/tasks%20list/task.dart';
+import 'package:duanmoi/Components/tasks%20list/task_detailScreen.dart';
+import 'package:duanmoi/Components/tasks%20list/news_class.dart';
+import 'package:duanmoi/Components/tasks%20list/news_detailScreen.dart';
+import 'package:duanmoi/Components/tasks%20list/task_class.dart';
 import 'package:duanmoi/homepage.dart';
 import 'package:duanmoi/profilescreen.dart';
 import 'package:duanmoi/login_screen.dart';
@@ -13,7 +13,7 @@ class Navigation {
   static const String home = '/home';
   static const String tb1 = '/notification';
   static const String detail = '/detailscreen';
-  static const String newdetail = 'news_detail';
+  static const String newdetail = '/news_detail';
 
   static Route<dynamic> getNavigation(RouteSettings settings) {
     switch (settings.name) {

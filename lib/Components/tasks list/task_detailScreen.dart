@@ -1,7 +1,7 @@
-import 'package:duanmoi/Components/tasks%20list/task.dart';
+import 'package:duanmoi/Components/tasks%20list/task_class.dart';
 import 'package:duanmoi/image.dart';
 import 'package:flutter/material.dart';
-import 'navigation.dart';
+import '../navigation_screen.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key, required this.item});

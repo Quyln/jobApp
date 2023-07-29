@@ -2,7 +2,7 @@ import 'package:duanmoi/image.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'Components/navigation.dart';
+import 'Components/navigation_screen.dart';
 
 class SlashScreen extends StatefulWidget {
   const SlashScreen({super.key});

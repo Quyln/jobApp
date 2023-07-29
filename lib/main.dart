@@ -1,4 +1,4 @@
-import 'package:duanmoi/Components/navigation.dart';
+import 'package:duanmoi/Components/navigation_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: true,
       initialRoute: Navigation.login,
       onGenerateRoute: Navigation.getNavigation,
     );
