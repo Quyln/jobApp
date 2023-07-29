@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:duanmoi/Components/navigation.dart';
 import 'package:duanmoi/Components/tasks%20list/task.dart';
@@ -24,9 +26,15 @@ class _TaskDesignState extends State<TaskDesign> {
   void getTaskList() async {
     final dio = Dio();
     loading = true;
-    var response = await dio.get('https://jsonplaceholder.typicode.com/todos');
+    var response = await dio.get(
+        'https://raw.githubusercontent.com/Quyln/jobApp/main/server/TaskList.json');
     if (response.statusCode == 200) {
-      List<dynamic> dataList = response.data;
+      if (response.data is String) {
+        print('string');
+      } else {
+        print('map');
+      }
+      List<dynamic> dataList = jsonDecode(response.data);
       List<Task> newTask = [];
       for (int i = 0; i < dataList.length; i++) {
         dynamic data = dataList[i];
