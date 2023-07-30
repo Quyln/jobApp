@@ -1,7 +1,4 @@
 import 'dart:convert';
-import 'dart:math';
-
-import 'package:duanmoi/images_link.dart';
 import 'package:duanmoi/profile_class.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -14,8 +11,31 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  List<dynamic> userInfo = [];
+  // late UserProfile userInfo;
+  // @override
+  // void initState() {
+  //   super.initState();
+  // }
 
+  // Future<UserProfile> getUser(int id) async {
+  // var url = Uri.parse(
+  //     'https://raw.githubusercontent.com/Quyln/jobApp/main/server/profile_data.json');
+  // final response = await http.get(url);
+
+  //   if (response.statusCode == 200) {
+  //     getUser(1).then((user) {
+  //       userInfo = user;
+  //       print('User ID: ${user.id}, Name: ${user.userName}');
+  //     }).catchError((error) {
+  //       print(error);
+  //     });
+  //     return UserProfile.fromJson(jsonDecode(response.body));
+  //   } else {
+  //     throw Exception('Khong lay duoc thong tin user');
+  //   }
+  // }
+  List<UserProfile> userInfo = [];
+  late UserProfile user;
   @override
   void initState() {
     super.initState();
@@ -31,7 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       List<dynamic> dataList = jsonDecode(response.body);
       userInfo = dataList.map((e) => UserProfile.fromJson(e)).toList();
       setState(() {
-        userInfo;
+        user = userInfo[0];
       });
     }
   }
@@ -54,7 +74,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                 ),
                 child: Image.network(
-                  'https://data.1freewallpapers.com/download/sunrise-above-the-clouds.jpg',
+                  user.coverimage,
                   height: 210,
                   width: 400,
                   fit: BoxFit.fill,
@@ -66,11 +86,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Column(
                 children: [
                   Text(
-                    'Nguyễn Thị Mộng Mơ',
+                    user.userName,
                     style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    'Nhân viên tuyển dụng',
+                    user.position,
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.normal,
@@ -114,7 +134,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 5,
                             ),
                             Text(
-                              'Nữ',
+                              user.gender,
                               style: TextStyle(
                                 fontSize: 20,
                               ),
@@ -152,7 +172,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 5,
                             ),
                             Text(
-                              '10/11/1990',
+                              user.dob,
                               style: TextStyle(
                                 fontSize: 20,
                               ),
@@ -190,7 +210,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 5,
                             ),
                             Text(
-                              '0987654321',
+                              user.phonenb,
                               style: TextStyle(
                                 fontSize: 20,
                               ),
@@ -207,13 +227,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ],
           ),
-          const Positioned(
+          Positioned(
               top: 145,
               left: 137,
               height: 120,
               width: 120,
               child: CircleAvatar(
-                backgroundImage: NetworkImage(AppImage.anhavatar),
+                backgroundImage: NetworkImage(user.image),
                 foregroundColor: Colors.blueAccent,
                 radius: 20,
               )),
