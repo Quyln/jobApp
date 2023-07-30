@@ -1,5 +1,10 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:duanmoi/images_link.dart';
+import 'package:duanmoi/profile_class.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -9,6 +14,28 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  List<dynamic> userInfo = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getUsers();
+  }
+
+  void getUsers() async {
+    var url = Uri.parse(
+        'https://raw.githubusercontent.com/Quyln/jobApp/main/server/profile_data.json');
+    var response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      List<dynamic> dataList = jsonDecode(response.body);
+      userInfo = dataList.map((e) => UserProfile.fromJson(e)).toList();
+      setState(() {
+        userInfo;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

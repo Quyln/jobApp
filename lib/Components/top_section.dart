@@ -1,7 +1,9 @@
+import 'dart:convert';
+
 import 'package:duanmoi/Components/top_class.dart';
 import 'package:duanmoi/images_link.dart';
 import 'package:flutter/material.dart';
-
+import 'package:http/http.dart' as http;
 import 'navigation_screen.dart';
 
 class TopSection extends StatefulWidget {
@@ -12,10 +14,31 @@ class TopSection extends StatefulWidget {
 }
 
 class _TopSectionState extends State<TopSection> {
-  List<ThongBao> danhsachtb = [
-    ThongBao(title: 'abc', subtitle: 'xya'),
-    ThongBao(title: 'sdfsdf', subtitle: 'sdfdsfdsfdsf')
-  ];
+  List<dynamic> danhsachtb = [];
+
+  @override
+  void initState() {
+    super.initState();
+    getThongbao();
+  }
+
+  void getThongbao() async {
+    var url = Uri.parse(
+        'https://raw.githubusercontent.com/Quyln/jobApp/main/server/thongbao_data.json');
+    var response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      List<dynamic> dataList = jsonDecode(response.body);
+      danhsachtb = dataList.map((e) => ThongBao.fromJson(e)).toList();
+
+      setState(() {
+        danhsachtb;
+      });
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Lỗi truy xuất dữ liệu')));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,13 +144,21 @@ class _TopSectionState extends State<TopSection> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     SizedBox(
-                                      height: 10,
-                                    ),
-                                    ListTile(
-                                      title: Text(danhsachtb[0].title),
-                                      subtitle: Text(danhsachtb[0].subtitle),
-                                      trailing: Icon(Icons.close),
-                                      dense: true,
+                                      height: 430,
+                                      width: MediaQuery.of(context).size.width,
+                                      child: ListView.builder(
+                                        scrollDirection: Axis.vertical,
+                                        itemCount: danhsachtb.length,
+                                        itemBuilder: (context, index) {
+                                          return ListTile(
+                                            title:
+                                                Text(danhsachtb[index].title),
+                                            subtitle: Text(
+                                                danhsachtb[index].subtitle),
+                                            trailing: const Icon(Icons.close),
+                                          );
+                                        },
+                                      ),
                                     )
                                   ],
                                 ),
