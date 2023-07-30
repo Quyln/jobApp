@@ -1,10 +1,21 @@
+import 'package:duanmoi/Components/top_class.dart';
 import 'package:duanmoi/images_link.dart';
 import 'package:flutter/material.dart';
 
 import 'navigation_screen.dart';
 
-class TopSection extends StatelessWidget {
+class TopSection extends StatefulWidget {
   const TopSection({super.key});
+
+  @override
+  State<TopSection> createState() => _TopSectionState();
+}
+
+class _TopSectionState extends State<TopSection> {
+  List<ThongBao> danhsachtb = [
+    ThongBao(title: 'abc', subtitle: 'xya'),
+    ThongBao(title: 'sdfsdf', subtitle: 'sdfdsfdsfdsf')
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +114,7 @@ class TopSection extends StatelessWidget {
                                     vertical: 0, horizontal: 0),
                                 child: Column(
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Danh sách thông báo',
                                       style: TextStyle(
                                           fontSize: 25,
@@ -113,28 +124,11 @@ class TopSection extends StatelessWidget {
                                       height: 10,
                                     ),
                                     ListTile(
-                                      title: Text('Tiền lương tháng 7'),
-                                      subtitle: Text(
-                                          'Thông báo số dư: + 10,000,000đ.'),
+                                      title: Text(danhsachtb[0].title),
+                                      subtitle: Text(danhsachtb[0].subtitle),
                                       trailing: Icon(Icons.close),
-                                    ),
-                                    ListTile(
-                                      title: Text('Công việc đã hoàn thành'),
-                                      subtitle: Text(
-                                          'Dự án ABC đã hoàn thành đúng tiến độ.'),
-                                      trailing: InkWell(
-                                        child: Icon(Icons.close),
-                                        onTap: () {
-                                          print('ABC');
-                                        },
-                                      ),
-                                    ),
-                                    ListTile(
-                                      title: Text('Cuộc họp tháng 7'),
-                                      subtitle: Text(
-                                          'Cuộc họp sẽ diễn ra vào ngày 20/07 lúc 10h.'),
-                                      trailing: Icon(Icons.close),
-                                    ),
+                                      dense: true,
+                                    )
                                   ],
                                 ),
                               ),

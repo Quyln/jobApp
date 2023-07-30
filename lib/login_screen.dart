@@ -207,24 +207,24 @@ class _SlashScreenState extends State<SlashScreen> {
                   children: [
                     Image.network(
                       'https://www.quinneysbush.co.nz/wp-content/uploads/2021/04/cropped-Facebook-logo-768x768.png',
-                      height: 30,
-                      width: 30,
+                      height: 40,
+                      width: 40,
                     ),
                     const SizedBox(
                       width: 5,
                     ),
                     Image.network(
                       'https://tools.bard.edu/wwwmedia/cms-icons/9598862/gmail-logo-icon-7.png',
-                      height: 30,
-                      width: 30,
+                      height: 40,
+                      width: 40,
                     ),
                     const SizedBox(
                       width: 5,
                     ),
                     Image.network(
-                      'https://th.bing.com/th/id/R.ebe27a78109afa97c69750112ac031b8?rik=bmAHTRp%2b07LwEg&pid=ImgRaw&r=0',
-                      height: 30,
-                      width: 30,
+                      'https://th.bing.com/th/id/R.a594bc8ec9713844636895d0261580ef?rik=WyhpMECQGXQEnw&riu=http%3a%2f%2fpngimg.com%2fuploads%2fapple_logo%2fapple_logo_PNG19667.png&ehk=5HXSjV0PkJXPe9OeQcrngoPVyGzadh4r14ZYFifesVg%3d&risl=&pid=ImgRaw&r=0',
+                      height: 40,
+                      width: 40,
                     ),
                   ],
                 )

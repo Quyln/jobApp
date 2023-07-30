@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "pass":1,
+        "userName": "Nguyễn Thị Mộng Mơ",
+        "position": "Nhân viên tuyển dụng",
+        "gender": "Nữ",
+        "dob": "10/11/1990",
+        "phonenb":"0987654321",
+        "image":"https://i.pinimg.com/originals/37/ec/ca/37ecca4ea89cf55ee92bf90ff12cae75.jpg"
+    },
+    {
+        "id": 2,
+        "pass":2,
+        "userName": "Trần Văn Sĩ",
+        "position": "Trưởng phòng nhân sự",
+        "gender": "Nam",
+        "dob": "06/07/1989",
+        "phonenb":"0988776654",
+        "image":"https://imgv3.fotor.com/images/gallery/3D-AI-Anime-Boy-Avatar.jpg"
+    },
+    {
+        "id": 3,
+        "pass":3,
+        "userName": "Bùi Thị Đào",
+        "position": "Giám đốc miền Nam",
+        "gender": "Nữ",
+        "dob": "12/10/1985",
+        "phonenb":"0965372846",
+        "image":"https://orig00.deviantart.net/0f1d/f/2015/237/a/c/ai_by_kadaj777-d973qgx.jpg"
+    }
+]

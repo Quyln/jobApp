@@ -19,12 +19,18 @@ class _ProfileScreenState extends State<ProfileScreen> {
             children: [
               Container(
                 height: 210,
-                width: 400,
+                width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(colors: [
                     Color.fromARGB(255, 11, 72, 228),
                     Colors.white,
                   ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+                ),
+                child: Image.network(
+                  'https://data.1freewallpapers.com/download/sunrise-above-the-clouds.jpg',
+                  height: 210,
+                  width: 400,
+                  fit: BoxFit.fill,
                 ),
               ),
               const SizedBox(
@@ -32,74 +38,143 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               Column(
                 children: [
-                  const Text(
+                  Text(
                     'Nguyễn Thị Mộng Mơ',
                     style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
                   ),
-                  const Text(
+                  Text(
                     'Nhân viên tuyển dụng',
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.normal,
                         fontStyle: FontStyle.italic),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 40,
                   ),
-                  const Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20),
+                    child: Column(
+                      children: [
+                        Row(
                           children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(2),
+                                height: 50,
+                                width: 50,
+                                decoration: const BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 5,
+                                      blurStyle: BlurStyle.outer,
+                                      color: Color.fromRGBO(0, 0, 0, 0.4),
+                                    )
+                                  ],
+                                  shape: BoxShape.circle,
+                                  color: Colors.red,
+                                ),
+                                child: Image.asset(
+                                  'images/gioitinh.png',
+                                  height: 40,
+                                  width: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
                             Text(
-                              '+ Giới tính: Nữ',
+                              'Nữ',
                               style: TextStyle(
-                                  fontSize: 17, fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text('+ Ngày sinh: 01/01/1990',
-                                style: TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text('+ Số điện thoại: 0987654321',
-                                style: TextStyle(
-                                    fontSize: 17, fontWeight: FontWeight.bold)),
-                            SizedBox(
-                              height: 10,
-                            ),
+                                fontSize: 20,
+                              ),
+                            )
                           ],
                         ),
-                      ),
-                    ],
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(8),
+                                height: 50,
+                                width: 50,
+                                decoration: const BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 5,
+                                      blurStyle: BlurStyle.outer,
+                                      color: Color.fromRGBO(0, 0, 0, 0.4),
+                                    )
+                                  ],
+                                  shape: BoxShape.circle,
+                                  color: Colors.blue,
+                                ),
+                                child: Image.asset(
+                                  'images/cake.png',
+                                  height: 40,
+                                  width: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              '10/11/1990',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                padding: EdgeInsets.all(2),
+                                height: 50,
+                                width: 50,
+                                decoration: const BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 5,
+                                      blurStyle: BlurStyle.outer,
+                                      color: Color.fromRGBO(0, 0, 0, 0.4),
+                                    )
+                                  ],
+                                  shape: BoxShape.circle,
+                                  color: Colors.green,
+                                ),
+                                child: Image.asset(
+                                  'images/phonenumber.png',
+                                  height: 40,
+                                  width: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              '0987654321',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.network(
-                        'https://th.bing.com/th/id/OIP.UGXgAEZkx26AjB3Gkuw-JQHaE4?pid=ImgDet&w=900&h=593&rs=1',
-                        height: 70,
-                        width: 70,
-                      ),
-                      Image.network(
-                        'https://webstockreview.net/images/gmail-icon-png-2.png',
-                        height: 60,
-                        width: 60,
-                      ),
-                      Image.network(
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Facebook_Messenger_logo_2020.svg/1200px-Facebook_Messenger_logo_2020.svg.png',
-                        height: 50,
-                        width: 50,
-                      ),
-                    ],
                   ),
                 ],
               ),
@@ -107,7 +182,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ),
           const Positioned(
               top: 145,
-              left: 140,
+              left: 137,
               height: 120,
               width: 120,
               child: CircleAvatar(
@@ -119,6 +194,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             top: 0,
             left: 0,
             child: BackButton(
+              color: Colors.white,
+            ),
+          ),
+          const Positioned(
+            top: 10,
+            right: 10,
+            child: Icon(
+              Icons.manage_accounts,
+              size: 30,
               color: Colors.white,
             ),
           ),
