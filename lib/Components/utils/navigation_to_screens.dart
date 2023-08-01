@@ -1,8 +1,8 @@
-import 'package:jobAppDT/Components/tasks%20list/task_detailScreen.dart';
-import 'package:jobAppDT/Components/tasks%20list/task_class.dart';
+import 'package:jobAppDT/Components/screens/task_detail_screen.dart';
+import 'package:jobAppDT/Components/classes/task_class.dart';
 import 'package:jobAppDT/homepage.dart';
-import 'package:jobAppDT/profile_class.dart';
-import 'package:jobAppDT/profilescreen.dart';
+import 'package:jobAppDT/Components/classes/profile_class.dart';
+import 'package:jobAppDT/Components/screens/profile_screen.dart';
 import 'package:jobAppDT/login_screen.dart';
 import 'package:flutter/material.dart';
 

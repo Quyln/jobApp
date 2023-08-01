@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'navigation_screen.dart';
+import 'utils/navigation_to_screens.dart';
 
 class SearchSection extends StatelessWidget {
   const SearchSection({super.key});
@@ -45,7 +45,7 @@ class SearchSection extends StatelessWidget {
               'images/close.png',
               height: 30,
               width: 30,
-              color: Color.fromARGB(255, 11, 72, 228),
+              color: const Color.fromARGB(255, 11, 72, 228),
             ),
           ),
         ),

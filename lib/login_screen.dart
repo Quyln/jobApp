@@ -1,8 +1,8 @@
-import 'package:jobAppDT/images_link.dart';
+import 'package:jobAppDT/Components/utils/images_link.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'Components/navigation_screen.dart';
+import 'Components/utils/navigation_to_screens.dart';
 
 class SlashScreen extends StatefulWidget {
   const SlashScreen({super.key});
@@ -86,7 +86,7 @@ class _SlashScreenState extends State<SlashScreen> {
                               color: Color.fromRGBO(0, 0, 0, 0.4))
                         ]),
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       controller: idcontroller,
                       decoration: const InputDecoration(
                           hintText: 'ID....',
@@ -113,7 +113,7 @@ class _SlashScreenState extends State<SlashScreen> {
                               color: Color.fromRGBO(0, 0, 0, 0.4))
                         ]),
                     child: TextField(
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                       controller: passcontroller,
                       decoration: InputDecoration(
                           suffixIconColor: Color.fromARGB(255, 255, 255, 255),
@@ -127,7 +127,7 @@ class _SlashScreenState extends State<SlashScreen> {
                                   ? Icons.visibility
                                   : Icons.visibility_off)),
                           hintText: 'Mật khẩu....',
-                          hintStyle: TextStyle(
+                          hintStyle: const TextStyle(
                               color: Color.fromARGB(255, 227, 227, 227)),
                           prefixIcon: Icon(Icons.lock),
                           prefixIconColor: Color.fromARGB(255, 255, 255, 255),

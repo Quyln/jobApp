@@ -1,4 +1,4 @@
-import 'package:jobAppDT/Components/tasks%20list/task_design.dart';
+import 'package:jobAppDT/Components/screens/task_screen.dart';
 import 'package:flutter/material.dart';
 
 class TaskSection extends StatelessWidget {

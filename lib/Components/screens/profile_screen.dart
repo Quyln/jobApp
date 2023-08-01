@@ -1,4 +1,4 @@
-import 'package:jobAppDT/profile_class.dart';
+import 'package:jobAppDT/Components/classes/profile_class.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -42,7 +42,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Text(
                     widget.user.userName,
-                    style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 27, fontWeight: FontWeight.bold),
                   ),
                   Text(
                     widget.user.position,
@@ -51,7 +52,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         fontWeight: FontWeight.normal,
                         fontStyle: FontStyle.italic),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   Padding(
@@ -175,7 +176,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                 ],

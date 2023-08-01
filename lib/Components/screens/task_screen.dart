@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:jobAppDT/Components/navigation_screen.dart';
-import 'package:jobAppDT/Components/tasks%20list/task_class.dart';
+import 'package:jobAppDT/Components/utils/navigation_to_screens.dart';
+import 'package:jobAppDT/Components/classes/task_class.dart';
 import 'package:flutter/material.dart';
 // import 'package:http/http.dart' as http;
 
@@ -111,7 +111,7 @@ class _TaskDesignState extends State<TaskDesign> {
         Visibility(
           visible: loading,
           child: Container(
-            decoration: BoxDecoration(color: Colors.transparent),
+            decoration: const BoxDecoration(color: Colors.transparent),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: const Center(

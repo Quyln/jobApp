@@ -1,4 +1,4 @@
-import 'package:jobAppDT/Components/navigation_screen.dart';
+import 'package:jobAppDT/Components/utils/navigation_to_screens.dart';
 import 'package:flutter/material.dart';
 
 void main() {

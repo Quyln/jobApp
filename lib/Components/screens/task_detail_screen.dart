@@ -1,7 +1,7 @@
-import 'package:jobAppDT/Components/tasks%20list/task_class.dart';
-import 'package:jobAppDT/images_link.dart';
+import 'package:jobAppDT/Components/classes/task_class.dart';
+import 'package:jobAppDT/Components/utils/images_link.dart';
 import 'package:flutter/material.dart';
-import '../navigation_screen.dart';
+import '../utils/navigation_to_screens.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({super.key, required this.item});
@@ -50,7 +50,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             shape: BoxShape.rectangle,
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(6)),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back,
                           color: Colors.red,
                         ),
@@ -74,7 +74,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: Scaffold(
+                                    child: const Scaffold(
                                       body: Column(children: [
                                         Center(
                                           child: Text(
@@ -111,7 +111,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             shape: BoxShape.rectangle,
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(6)),
-                        child: Icon(
+                        child: const Icon(
                           Icons.clear,
                           color: Colors.red,
                         ),

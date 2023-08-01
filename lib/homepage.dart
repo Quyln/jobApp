@@ -1,10 +1,10 @@
-import 'package:jobAppDT/Components/search_section.dart';
-import 'package:jobAppDT/Components/task_section.dart';
-import 'package:jobAppDT/Components/tasks%20list/news_design.dart';
-import 'package:jobAppDT/Components/top_section.dart';
+import 'package:jobAppDT/Components/home_search_section.dart';
+import 'package:jobAppDT/Components/home_task_section.dart';
+import 'package:jobAppDT/Components/home_news_section.dart';
+import 'package:jobAppDT/Components/home_top_section.dart';
 import 'package:jobAppDT/Components/utils/rive_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:jobAppDT/images_link.dart';
+import 'package:jobAppDT/Components/utils/images_link.dart';
 import 'package:rive/rive.dart';
 
 class HomePage extends StatefulWidget {
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              Expanded(
+              const Expanded(
                 child: News(),
               ),
             ],

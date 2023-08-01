@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:jobAppDT/Components/tasks%20list/news_class.dart';
+import 'package:jobAppDT/Components/classes/news_class.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:url_launcher/url_launcher_string.dart';
@@ -55,7 +55,7 @@ class _NewsState extends State<News> {
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: [
+                          boxShadow: const [
                             BoxShadow(
                                 blurRadius: 2,
                                 blurStyle: BlurStyle.outer,
@@ -82,7 +82,7 @@ class _NewsState extends State<News> {
                                   width: 235,
                                   child: Text(
                                     e.title,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 19,
                                         fontWeight: FontWeight.w600),
                                     overflow: TextOverflow.ellipsis,
@@ -94,7 +94,7 @@ class _NewsState extends State<News> {
                                   width: 235,
                                   child: Text(
                                     e.content,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 15,
                                         fontWeight: FontWeight.normal,
                                         fontStyle: FontStyle.italic),

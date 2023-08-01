@@ -1,9 +1,9 @@
 import 'dart:convert';
-import 'package:jobAppDT/Components/top_class.dart';
+import 'package:jobAppDT/Components/classes/notification_class.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:jobAppDT/profile_class.dart';
-import 'navigation_screen.dart';
+import 'package:jobAppDT/Components/classes/profile_class.dart';
+import 'utils/navigation_to_screens.dart';
 
 class TopSection extends StatefulWidget {
   const TopSection({super.key});
@@ -96,7 +96,7 @@ class _TopSectionState extends State<TopSection> {
                   ),
                   borderRadius: BorderRadius.circular(15)),
               child: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: CircleAvatar(
                   backgroundColor: Colors.white10,
                   backgroundImage: NetworkImage(
@@ -120,14 +120,14 @@ class _TopSectionState extends State<TopSection> {
               children: [
                 Text(
                   user.userName,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.normal),
                 ),
                 Text(
                   user.position,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                       fontStyle: FontStyle.italic),
@@ -158,7 +158,7 @@ class _TopSectionState extends State<TopSection> {
                     context: context,
                     pageBuilder: (context, _, __) => Center(
                           child: Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 20),
                             margin: EdgeInsets.symmetric(horizontal: 20),
                             height: 500,
