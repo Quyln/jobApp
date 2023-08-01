@@ -43,8 +43,7 @@ class _NewsState extends State<News> {
       controller: controller,
       children: newsList
           .map((e) => Padding(
-                padding: const EdgeInsets.only(
-                    left: 30, right: 30, top: 26, bottom: 5),
+                padding: const EdgeInsets.only(left: 30, right: 30, bottom: 5),
                 child: InkWell(
                   onTap: () {
                     launchUrlString(e.link);
@@ -52,7 +51,7 @@ class _NewsState extends State<News> {
                   child: Container(
                       height: 200,
                       padding:
-                          const EdgeInsets.only(top: 23, left: 10, bottom: 10),
+                          const EdgeInsets.only(top: 10, left: 10, bottom: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(20),
@@ -79,7 +78,7 @@ class _NewsState extends State<News> {
                             child: Column(
                               children: [
                                 Container(
-                                  padding: EdgeInsets.only(left: 10),
+                                  padding: EdgeInsets.only(left: 10, top: 10),
                                   width: 235,
                                   child: Text(
                                     e.title,
@@ -91,7 +90,7 @@ class _NewsState extends State<News> {
                                 ),
                                 Container(
                                   padding: EdgeInsets.only(left: 10, top: 10),
-                                  height: 110,
+                                  height: 120,
                                   width: 235,
                                   child: Text(
                                     e.content,
@@ -101,7 +100,7 @@ class _NewsState extends State<News> {
                                         fontStyle: FontStyle.italic),
                                     overflow: TextOverflow.ellipsis,
                                     softWrap: true,
-                                    maxLines: 5,
+                                    maxLines: 6,
                                   ),
                                 ),
                               ],

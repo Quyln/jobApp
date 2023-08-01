@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:jobAppDT/Components/top_class.dart';
-import 'package:jobAppDT/images_link.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:jobAppDT/profile_class.dart';

@@ -71,6 +71,7 @@ flutter:
     - images/cake.png
     - images/gioitinh.png
     - images/phonenumber.png
+    - images/linebreak.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

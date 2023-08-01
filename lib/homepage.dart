@@ -4,7 +4,10 @@ import 'package:jobAppDT/Components/tasks%20list/news_design.dart';
 import 'package:jobAppDT/Components/top_section.dart';
 import 'package:jobAppDT/Components/utils/rive_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:jobAppDT/images_link.dart';
 import 'package:rive/rive.dart';
+
+import 'images_link.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -79,47 +82,35 @@ class _HomePageState extends State<HomePage> {
               TopSection(),
               SearchSection(),
               TaskSection(),
+              SizedBox(
+                height: 30,
+                width: MediaQuery.of(context).size.width,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'images/linebreak.png',
+                      width: 100,
+                    ),
+                    const Text(
+                      'Tin Tức',
+                      style: TextStyle(
+                          color: FontSty.mauchinh,
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Image.asset(
+                      'images/linebreak.png',
+                      width: 100,
+                    ),
+                  ],
+                ),
+              ),
               Expanded(
                 child: News(),
               ),
             ],
           ),
-          // Positioned(
-          //     top: 145,
-          //     left: 20,
-          //     child: Container(
-          //       decoration: BoxDecoration(
-          //           color: Color.fromARGB(255, 11, 72, 228),
-          //           borderRadius: BorderRadius.circular(25)),
-          //       height: 33,
-          //       width: 110,
-          //       child: Center(
-          //           child: Text(
-          //         'Hộp thư',
-          //         style: TextStyle(
-          //             fontWeight: FontWeight.bold,
-          //             fontSize: 20,
-          //             color: Colors.white),
-          //       )),
-          //     )),
-          Positioned(
-              bottom: 154,
-              left: 140,
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 11, 72, 228),
-                    borderRadius: BorderRadius.circular(25)),
-                height: 35,
-                width: 100,
-                child: const Center(
-                    child: Text(
-                  'Tin tức',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      color: Colors.white),
-                )),
-              ))
         ],
       )),
     );

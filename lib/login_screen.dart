@@ -19,7 +19,7 @@ class _SlashScreenState extends State<SlashScreen> {
   bool loading = false;
 
   Future<bool> checkloginBE(String id, String pass) async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
     return true;
   }
 
@@ -88,7 +88,7 @@ class _SlashScreenState extends State<SlashScreen> {
                     child: TextField(
                       style: TextStyle(color: Colors.white),
                       controller: idcontroller,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: 'ID....',
                           hintStyle: TextStyle(
                               color: Color.fromARGB(255, 227, 227, 227)),
@@ -170,7 +170,7 @@ class _SlashScreenState extends State<SlashScreen> {
                     },
                     child: Container(
                       height: 60,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(10),
                           topRight: Radius.circular(25),
@@ -235,10 +235,10 @@ class _SlashScreenState extends State<SlashScreen> {
           Visibility(
             visible: loading,
             child: Container(
-              decoration: BoxDecoration(color: Colors.black26),
+              decoration: const BoxDecoration(color: Colors.black26),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              child: Center(
+              child: const Center(
                   child: CircularProgressIndicator(
                 color: Colors.white,
               )),

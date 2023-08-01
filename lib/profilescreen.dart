@@ -1,7 +1,5 @@
-import 'dart:convert';
 import 'package:jobAppDT/profile_class.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key, required this.user});
