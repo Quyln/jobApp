@@ -4,35 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({super.key, required this.user});
+
+  final UserProfile user;
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  List<UserProfile> userInfo = [];
-  late UserProfile user;
-  @override
-  void initState() {
-    super.initState();
-    getUsers();
-  }
-
-  void getUsers() async {
-    var url = Uri.parse(
-        'https://raw.githubusercontent.com/Quyln/jobApp/main/server/profile_data.json');
-    var response = await http.get(url);
-
-    if (response.statusCode == 200) {
-      List<dynamic> dataList = jsonDecode(response.body);
-      userInfo = dataList.map((e) => UserProfile.fromJson(e)).toList();
-      setState(() {
-        user = userInfo[0];
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                 ),
                 child: Image.network(
-                  user.coverimage,
+                  widget.user.coverimage,
                   height: 210,
                   width: 400,
                   fit: BoxFit.fill,
@@ -63,12 +43,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               Column(
                 children: [
                   Text(
-                    user.userName,
+                    widget.user.userName,
                     style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    user.position,
-                    style: TextStyle(
+                    widget.user.position,
+                    style: const TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.normal,
                         fontStyle: FontStyle.italic),
@@ -107,12 +87,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
                             Text(
-                              user.gender,
-                              style: TextStyle(
+                              widget.user.gender,
+                              style: const TextStyle(
                                 fontSize: 20,
                               ),
                             )
@@ -149,7 +129,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 5,
                             ),
                             Text(
-                              user.dob,
+                              widget.user.dob,
                               style: TextStyle(
                                 fontSize: 20,
                               ),
@@ -187,7 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: 5,
                             ),
                             Text(
-                              user.phonenb,
+                              widget.user.phonenb,
                               style: TextStyle(
                                 fontSize: 20,
                               ),
@@ -210,7 +190,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 120,
               width: 120,
               child: CircleAvatar(
-                backgroundImage: NetworkImage(user.image),
+                backgroundImage: NetworkImage(widget.user.image),
                 foregroundColor: Colors.blueAccent,
                 radius: 20,
               )),

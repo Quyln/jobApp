@@ -3,6 +3,7 @@ import 'package:jobAppDT/Components/top_class.dart';
 import 'package:jobAppDT/images_link.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:jobAppDT/profile_class.dart';
 import 'navigation_screen.dart';
 
 class TopSection extends StatefulWidget {
@@ -14,11 +15,23 @@ class TopSection extends StatefulWidget {
 
 class _TopSectionState extends State<TopSection> {
   List<dynamic> danhsachtb = [];
-
+  List<UserProfile> userInfo = [];
+  UserProfile user = UserProfile(
+      id: 1,
+      pass: 1,
+      userName: '',
+      position: '',
+      gender: '',
+      dob: '',
+      phonenb: '',
+      image: '',
+      coverimage:
+          'https://www.publicdomainpictures.net/pictures/150000/velka/white-background-14532158163GC.jpg');
   @override
   void initState() {
     super.initState();
     getThongbao();
+    getUsers();
   }
 
   void getThongbao() async {
@@ -39,36 +52,59 @@ class _TopSectionState extends State<TopSection> {
     }
   }
 
+  void getUsers() async {
+    var url = Uri.parse(
+        'https://raw.githubusercontent.com/Quyln/jobApp/main/server/profile_data.json');
+    var response = await http.get(url);
+
+    if (response.statusCode == 200) {
+      List<dynamic> dataList = jsonDecode(response.body);
+      userInfo = dataList.map((e) => UserProfile.fromJson(e)).toList();
+      setState(() {
+        user = userInfo.firstWhere((user) => user.id == 2);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20, top: 20, right: 20),
       child: Row(
         children: [
-          Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-                boxShadow: const [
-                  BoxShadow(
-                      color: Color.fromRGBO(0, 0, 0, 0.4),
-                      blurStyle: BlurStyle.outer,
-                      blurRadius: 3)
-                ],
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromARGB(255, 11, 72, 228),
-                    Colors.white,
+          InkWell(
+            onTap: () {
+              Navigator.of(context)
+                  .pushNamed(Navigation.profile, arguments: user);
+            },
+            child: Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color.fromRGBO(0, 0, 0, 0.4),
+                        blurStyle: BlurStyle.outer,
+                        blurRadius: 3)
                   ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 11, 72, 228),
+                      Colors.white,
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
+                  borderRadius: BorderRadius.circular(15)),
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  backgroundColor: Colors.white10,
+                  backgroundImage: NetworkImage(
+                    user.image,
+                  ),
+                  radius: 12,
                 ),
-                borderRadius: BorderRadius.circular(15)),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
-                backgroundImage: NetworkImage(AppImage.anhavatar),
-                radius: 12,
               ),
             ),
           ),
@@ -77,20 +113,21 @@ class _TopSectionState extends State<TopSection> {
           ),
           InkWell(
             onTap: () {
-              Navigator.of(context).pushNamed(Navigation.profile);
+              Navigator.of(context)
+                  .pushNamed(Navigation.profile, arguments: user);
             },
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Nguyễn Thị Mộng Mơ',
+                  user.userName,
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.normal),
                 ),
                 Text(
-                  'Nhân viên tuyển dụng',
+                  user.position,
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,

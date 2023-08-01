@@ -1,6 +1,7 @@
 import 'package:jobAppDT/Components/tasks%20list/task_detailScreen.dart';
 import 'package:jobAppDT/Components/tasks%20list/task_class.dart';
 import 'package:jobAppDT/homepage.dart';
+import 'package:jobAppDT/profile_class.dart';
 import 'package:jobAppDT/profilescreen.dart';
 import 'package:jobAppDT/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,10 @@ class Navigation {
       case login:
         return MaterialPageRoute(builder: (context) => SlashScreen());
       case profile:
-        return MaterialPageRoute(builder: (context) => ProfileScreen());
+        return MaterialPageRoute(
+            builder: (context) => ProfileScreen(
+                  user: settings.arguments as UserProfile,
+                ));
       case home:
         return MaterialPageRoute(builder: (context) => HomePage());
 

@@ -40,6 +40,7 @@ class _SlashScreenState extends State<SlashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           SafeArea(
