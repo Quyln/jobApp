@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:jobAppDT/images_link.dart';
 import 'package:rive/rive.dart';
 
-import 'images_link.dart';
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -26,9 +24,9 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       bottomNavigationBar: SafeArea(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 24),
-          padding: EdgeInsets.all(12),
-          decoration: BoxDecoration(
+          margin: const EdgeInsets.symmetric(horizontal: 24),
+          padding: const EdgeInsets.all(12),
+          decoration: const BoxDecoration(
               color: Color.fromARGB(255, 11, 72, 228),
               borderRadius: BorderRadius.all(Radius.circular(24))),
           child: Row(
