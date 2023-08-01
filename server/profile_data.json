@@ -1,7 +1,7 @@
 [
     {
-        "id": 1,
-        "pass":1,
+        "id": "1",
+        "pass":"1",
         "userName": "Nguyễn Thị Mộng Mơ",
         "position": "Nhân viên tuyển dụng",
         "gender": "Nữ",
@@ -11,8 +11,8 @@
         "coverimage": "https://data.1freewallpapers.com/download/sunrise-above-the-clouds.jpg"
     },
     {
-        "id": 2,
-        "pass":2,
+        "id": "2",
+        "pass":"2",
         "userName": "Trần Văn Sĩ",
         "position": "Trưởng phòng nhân sự",
         "gender": "Nam",
@@ -22,8 +22,8 @@
         "coverimage": "https://th.bing.com/th/id/R.24b76764f8306648b071a205da61eb44?rik=v7tCzlB00e6l7A&pid=ImgRaw&r=0"
     },
     {
-        "id": 3,
-        "pass":3,
+        "id": "3",
+        "pass":"3",
         "userName": "Bùi Thị Đào",
         "position": "Giám đốc miền Nam",
         "gender": "Nữ",
