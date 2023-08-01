@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:duanmoi/profile_class.dart';
+import 'package:jobAppDT/profile_class.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -11,29 +11,6 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  // late UserProfile userInfo;
-  // @override
-  // void initState() {
-  //   super.initState();
-  // }
-
-  // Future<UserProfile> getUser(int id) async {
-  // var url = Uri.parse(
-  //     'https://raw.githubusercontent.com/Quyln/jobApp/main/server/profile_data.json');
-  // final response = await http.get(url);
-
-  //   if (response.statusCode == 200) {
-  //     getUser(1).then((user) {
-  //       userInfo = user;
-  //       print('User ID: ${user.id}, Name: ${user.userName}');
-  //     }).catchError((error) {
-  //       print(error);
-  //     });
-  //     return UserProfile.fromJson(jsonDecode(response.body));
-  //   } else {
-  //     throw Exception('Khong lay duoc thong tin user');
-  //   }
-  // }
   List<UserProfile> userInfo = [];
   late UserProfile user;
   @override

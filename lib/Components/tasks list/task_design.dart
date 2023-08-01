@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:duanmoi/Components/navigation_screen.dart';
-import 'package:duanmoi/Components/tasks%20list/task_class.dart';
+import 'package:jobAppDT/Components/navigation_screen.dart';
+import 'package:jobAppDT/Components/tasks%20list/task_class.dart';
 import 'package:flutter/material.dart';
 // import 'package:http/http.dart' as http;
 

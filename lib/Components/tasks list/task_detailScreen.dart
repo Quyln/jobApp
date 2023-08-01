@@ -1,5 +1,5 @@
-import 'package:duanmoi/Components/tasks%20list/task_class.dart';
-import 'package:duanmoi/images_link.dart';
+import 'package:jobAppDT/Components/tasks%20list/task_class.dart';
+import 'package:jobAppDT/images_link.dart';
 import 'package:flutter/material.dart';
 import '../navigation_screen.dart';
 

@@ -1,8 +1,8 @@
-import 'package:duanmoi/Components/tasks%20list/task_detailScreen.dart';
-import 'package:duanmoi/Components/tasks%20list/task_class.dart';
-import 'package:duanmoi/homepage.dart';
-import 'package:duanmoi/profilescreen.dart';
-import 'package:duanmoi/login_screen.dart';
+import 'package:jobAppDT/Components/tasks%20list/task_detailScreen.dart';
+import 'package:jobAppDT/Components/tasks%20list/task_class.dart';
+import 'package:jobAppDT/homepage.dart';
+import 'package:jobAppDT/profilescreen.dart';
+import 'package:jobAppDT/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class Navigation {

@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:duanmoi/Components/top_class.dart';
-import 'package:duanmoi/images_link.dart';
+import 'package:jobAppDT/Components/top_class.dart';
+import 'package:jobAppDT/images_link.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'navigation_screen.dart';

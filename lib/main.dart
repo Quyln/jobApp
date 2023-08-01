@@ -1,4 +1,4 @@
-import 'package:duanmoi/Components/navigation_screen.dart';
+import 'package:jobAppDT/Components/navigation_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
