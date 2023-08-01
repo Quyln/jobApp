@@ -1,6 +1,6 @@
 class UserProfile {
-  int id;
-  int pass;
+  String id;
+  String pass;
   String userName;
   String position;
   String gender;

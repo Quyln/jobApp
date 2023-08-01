@@ -16,8 +16,8 @@ class _TopSectionState extends State<TopSection> {
   List<dynamic> danhsachtb = [];
   List<UserProfile> userInfo = [];
   UserProfile user = UserProfile(
-      id: 1,
-      pass: 1,
+      id: '1',
+      pass: '1',
       userName: '',
       position: '',
       gender: '',
@@ -60,7 +60,7 @@ class _TopSectionState extends State<TopSection> {
       List<dynamic> dataList = jsonDecode(response.body);
       userInfo = dataList.map((e) => UserProfile.fromJson(e)).toList();
       setState(() {
-        user = userInfo.firstWhere((user) => user.id == 2);
+        user = userInfo.firstWhere((user) => user.id == '2');
       });
     }
   }
