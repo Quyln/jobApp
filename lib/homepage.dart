@@ -86,9 +86,13 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      'images/linebreak.png',
-                      width: 100,
+                    Container(
+                      padding: const EdgeInsets.all(6),
+                      // width: 100,
+                      child: Image.asset(
+                        'images/linebreak.png',
+                        fit: BoxFit.fill,
+                      ),
                     ),
                     const Text(
                       'Tin Tức',
@@ -97,9 +101,13 @@ class _HomePageState extends State<HomePage> {
                           fontSize: 15,
                           fontWeight: FontWeight.bold),
                     ),
-                    Image.asset(
-                      'images/linebreak.png',
-                      width: 100,
+                    Container(
+                      padding: const EdgeInsets.all(6),
+                      // width: 100,
+                      child: Image.asset(
+                        'images/linebreak.png',
+                        fit: BoxFit.fill,
+                      ),
                     ),
                   ],
                 ),
